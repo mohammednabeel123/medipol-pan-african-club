@@ -85,7 +85,7 @@
       min-height: 100vh;
       background:
         linear-gradient(135deg, rgba(13,13,13,0.82) 0%, rgba(27,67,50,0.65) 50%, rgba(13,13,13,0.88) 100%),
-        url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1600&q=80') center/cover no-repeat;
+        url('../images/Background.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       position: relative;

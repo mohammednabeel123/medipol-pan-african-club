@@ -491,3 +491,35 @@
       .hero-stats { gap: 28px; }
       .col-lg-6:first-child { margin-bottom: 36px; }
     }
+
+
+    .page-section {
+  padding-top: 150px;
+  min-height: 100vh;
+}
+
+.event-detail-card {
+  margin-top: 40px;
+  background: #181818;
+  border: 1px solid rgba(201,168,76,0.15);
+  padding: 45px;
+  border-radius: 6px;
+}
+
+.event-detail-image {
+  height: 260px;
+  background: linear-gradient(135deg, var(--green), var(--green-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  margin-bottom: 30px;
+}
+
+.event-full-description {
+  color: rgba(245,240,232,0.65);
+  line-height: 1.9;
+  font-size: 1rem;
+  max-width: 850px;
+  margin: 25px 0;
+}

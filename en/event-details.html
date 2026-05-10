@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Event Details | Medipol Pan-African</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+  <link rel="stylesheet" href="../css/styles.css">  
+  <script src="../js/main.js"></script>
+    <script src="../js/events-data.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar" id="mainNav">
+      <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+          Medipol <span>Pan-African</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link active" href="events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#join">Join Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+    <div class="african-pattern-bar"></div>
+  </header>
+
+  <!-- EVENT DETAILS SECTION -->
+  <section class="event-detail-section page-section">
+
+    <div class="container">
+
+      <a href="events.html" class="btn-learn mb-4 d-inline-block">
+        ← Back to Events
+      </a>
+
+      <div id="eventDetails" class="event-detail-card fade-up visible">
+        <!-- Event details will load here using JS -->
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="container">
+
+      <div class="row gy-5">
+
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            Medipol <span>Pan-African</span>
+          </div>
+
+          <p class="footer-text">
+            Celebrating African unity, culture and excellence at Istanbul Medipol University.
+          </p>
+
+          <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <h4 class="footer-heading">Quick Links</h4>
+
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4">
+          <h4 class="footer-heading">Contact</h4>
+
+          <ul class="footer-links">
+            <li>panafricanclub@medipol.edu.tr</li>
+            <li>Istanbul Medipol University</li>
+            <li>Istanbul, Türkiye</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Istanbul Medipol Pan-African Club. All rights reserved.</p>
+        <div class="footer-motto">One Africa. One Future. 🌍</div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Events Data -->
+  
+
+  <!-- Event Details Logic -->
+  <script src="js/events-data.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const eventId = params.get("id");
+
+  const selectedEvent = events.find(event => event.id === eventId);
+  const eventDetails = document.getElementById("eventDetails");
+
+  const renderList = (title, items) => {
+    if (!items || items.length === 0) return "";
+
+    return `
+      <div class="event-extra-section">
+        <h3>${title}</h3>
+
+        <ul class="event-highlights">
+          ${items.map(item => `<li>${item}</li>`).join("")}
+        </ul>
+      </div>
+    `;
+  };
+
+  const renderBadges = (title, items) => {
+    if (!items || items.length === 0) return "";
+
+    return `
+      <div class="event-extra-section">
+        <h3>${title}</h3>
+
+        <div class="countries-grid">
+          ${items.map(item => `
+            <span class="country-badge">${item}</span>
+          `).join("")}
+        </div>
+      </div>
+    `;
+  };
+
+  if (selectedEvent) {
+    eventDetails.innerHTML = `
+      <div class="event-detail-image">
+        ${selectedEvent.image}
+      </div>
+
+      <div class="event-detail-content">
+
+        <div class="event-date">
+          ${selectedEvent.date}
+        </div>
+
+        <h1 class="section-title">
+          ${selectedEvent.title}
+        </h1>
+
+        <div class="event-meta">
+          <div>
+            <strong>Category:</strong>
+            <span>${selectedEvent.category}</span>
+          </div>
+
+          <div>
+            <strong>Location:</strong>
+            <span>${selectedEvent.location}</span>
+          </div>
+        </div>
+
+        <p class="event-full-description">
+          ${selectedEvent.fullDescription}
+        </p>
+
+        ${renderBadges("Represented Countries & Communities", selectedEvent.representedCountries)}
+
+        ${renderList("African Leaders & Heroes Display", selectedEvent.leaders)}
+
+        ${renderList("Cultural Decorations", selectedEvent.decorations)}
+
+        ${renderList("Interactive African Knowledge Quiz", selectedEvent.quizDetails)}
+
+        ${renderList("Cultural Prizes", selectedEvent.prizes)}
+
+        ${renderBadges("Food Showcase Countries", selectedEvent.foodShowcase)}
+
+        ${renderList("Event Highlights", selectedEvent.highlights)}
+
+        <div class="event-actions">
+          <a href="contact.html" class="btn-gold">
+            Contact The Organizers
+          </a>
+
+          <a href="events.html" class="btn-outline-gold">
+            Explore More Events
+          </a>
+        </div>
+
+      </div>
+    `;
+  } else {
+    eventDetails.innerHTML = `
+      <div class="event-detail-content">
+        <h1 class="section-title">
+          Event <span>Not Found</span>
+        </h1>
+
+        <p class="event-full-description">
+          This event does not exist or may have been removed.
+        </p>
+
+        <a href="events.html" class="btn-gold">
+          Back to Events
+        </a>
+      </div>
+    `;
+  }
+});
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
