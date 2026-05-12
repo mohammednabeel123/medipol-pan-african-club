@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
+  <title>Istanbul Medipol Pan-African Club</title>
+  <meta name="description" content="Meet the leadership team behind the Istanbul Medipol Pan-African Club.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<style>
+  .floating-contact-widget {
+  position: fixed;
+  right: 34px;
+  bottom: 34px;
+  width: 72px;
+  height: 72px;
+  z-index: 9999;
+}
+
+.float-main-btn,
+.float-option {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 1.65rem;
+  text-decoration: none;
+
+  box-shadow: 0 14px 35px rgba(0,0,0,0.35);
+  transition: 0.35s ease;
+}
+
+.float-main-btn {
+  background: #c0d219;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.float-main-btn:hover {
+  transform: scale(1.08);
+}
+
+.float-option {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(0, 0) scale(0.3);
+}
+
+.floating-contact-widget.active .float-option {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* pop-out circle positions */
+.floating-contact-widget.active .option-instagram {
+  transform: translate(-105px, -15px) scale(1);
+}
+
+.floating-contact-widget.active .option-email {
+  transform: translate(-80px, -95px) scale(1);
+}
+
+.floating-contact-widget.active .option-phone {
+  transform: translate(0, -130px) scale(1);
+}
+
+.floating-contact-widget.active .option-chat {
+  transform: translate(-125px, -125px) scale(1);
+}
+
+/* colors */
+.option-instagram {
+  background: #e1306c;
+}
+
+.option-email {
+  background: #d4af37;
+  color: #111;
+}
+
+.option-phone {
+  background: #25d366;
+}
+
+.option-chat {
+  background: #1e88e5;
+  cursor: pointer;
+}
+
+/* labels */
+.float-option span {
+  position: absolute;
+  right: 78px;
+  background: #111;
+  color: #fff;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 20px;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: 0.25s ease;
+  pointer-events: none;
+}
+
+.float-option:hover span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* mini chat */
+.mini-chat-panel {
+  position: fixed;
+  right: 34px;
+  bottom: 125px;
+  width: 320px;
+  background: #111;
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 14px;
+  overflow: hidden;
+  display: none;
+  z-index: 9998;
+  box-shadow: 0 22px 60px rgba(0,0,0,0.45);
+}
+
+.mini-chat-panel.show {
+  display: block;
+}
+
+.mini-chat-header {
+  background: var(--green);
+  color: white;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mini-chat-header p {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+.mini-chat-header button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.mini-chat-body {
+  padding: 18px;
+}
+
+.bot-msg {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.78);
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.mini-chat-body a {
+  display: block;
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .floating-contact-widget {
+    right: 22px;
+    bottom: 24px;
+  }
+
+  .float-main-btn,
+  .float-option {
+    width: 60px;
+    height: 60px;
+    font-size: 1.35rem;
+  }
+
+  .floating-contact-widget.active .option-instagram {
+    transform: translate(-88px, -10px) scale(1);
+  }
+
+  .floating-contact-widget.active .option-email {
+    transform: translate(-70px, -80px) scale(1);
+  }
+
+  .floating-contact-widget.active .option-phone {
+    transform: translate(0, -110px) scale(1);
+  }
+
+  .floating-contact-widget.active .option-chat {
+    transform: translate(-105px, -105px) scale(1);
+  }
+
+  .mini-chat-panel {
+    right: 18px;
+    bottom: 105px;
+    width: calc(100% - 36px);
+  }
+}
+</style>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          Medipol <span>Pan-African</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link active" href="team.html">Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="#join">Join Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item dropdown ms-lg-3">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">EN</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/index.html">English</a></li>
+                <li><a class="dropdown-item" href="../fr/index.html">Français</a></li>
+                <li><a class="dropdown-item" href="../tr/index.html">Türkçe</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="african-pattern-bar"></div>
+  </header>  
+
+  <section class="team-page page-section">
+  <div class="container">
+
+    <div class="text-center mb-5 fade-up visible">
+      <div class="section-eyebrow">Leadership</div>
+      <h1 class="section-title">
+        Meet The <span>Team</span>
+      </h1>
+      <div class="section-line mx-auto"></div>
+      <p class="section-subtitle mx-auto">
+        The student leaders building community, culture, and connection for the Medipol Pan-African family.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-4 fade-up visible">
+        <div class="team-card">
+          <div class="team-avatar">👑</div>
+          <h3>President</h3>
+          <p class="team-role">Club Leadership</p>
+          <p class="team-bio">
+            Leads the club vision, coordinates executive decisions, and represents the Pan-African community.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4 fade-up visible">
+        <div class="team-card">
+          <div class="team-avatar">⚡</div>
+          <h3>Vice President</h3>
+          <p class="team-role">Operations & Support</p>
+          <p class="team-bio">
+            Supports planning, member coordination, and helps ensure club activities run smoothly.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4 fade-up visible">
+        <div class="team-card">
+          <div class="team-avatar">📝</div>
+          <h3>Secretary</h3>
+          <p class="team-role">Communication</p>
+          <p class="team-bio">
+            Manages records, meeting notes, announcements, and internal communication.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4 fade-up visible">
+        <div class="team-card">
+          <div class="team-avatar">💰</div>
+          <h3>Treasurer</h3>
+          <p class="team-role">Finance</p>
+          <p class="team-bio">
+            Handles budgets, spending plans, and financial organization for club events.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4 fade-up visible">
+        <div class="team-card">
+          <div class="team-avatar">📸</div>
+          <h3>Media Director</h3>
+          <p class="team-role">Design & Social Media</p>
+          <p class="team-bio">
+            Captures club moments, manages visual identity, and helps share our story online.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4 fade-up visible">
+        <div class="team-card">
+          <div class="team-avatar">🎪</div>
+          <h3>Events Coordinator</h3>
+          <p class="team-role">Programs & Activities</p>
+          <p class="team-bio">
+            Plans cultural festivals, hangouts, forums, and student engagement activities.
+          </p>
+        </div>
+      </div>
+
+    </div>
+ 
+  </div>
+</section>
+
+<section class="cta-section" id="join">
+  <div class="container text-center position-relative">
+    <div class="section-eyebrow">Work With Us</div>
+    <h2 class="section-title">
+      Join The <span>Community</span>
+    </h2>
+    <p>
+      Want to help organize events, support students, or contribute to the Pan-African community?
+      There is a place for you on the team.
+    </p>
+
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn-gold">Contact The Team</a>
+      <a href="events.html" class="btn-outline-white">View Events</a>
+    </div>
+  </div>
+</section>
+    <div class="floating-contact-widget">
+
+    <a href="https://www.instagram.com/pan_africanistanbul/" target="_blank" class="float-option option-instagram">
+      <i class="fa-brands fa-instagram"></i>
+      <span>Instagram</span>
+    </a>
+
+    <a href="mailto:panafricanclub@medipol.edu.tr" class="float-option option-email">
+      <i class="fa-solid fa-envelope"></i>
+      <span>Email</span>
+    </a>
+
+    <a href="tel:+900000000000" class="float-option option-phone">
+      <i class="fa-solid fa-phone"></i>
+      <span>Call Us</span>
+    </a>
+
+    <button class="float-option option-chat" id="openMiniChat">
+      <i class="fa-solid fa-comments"></i>
+      <span>Live Chat</span>
+    </button>
+
+    <button class="float-main-btn" id="floatMainBtn">
+      <i class="fa-solid fa-headset"></i>
+    </button>
+
+    </div>
+    <div class="mini-chat-panel" id="miniChatPanel">
+      <div class="mini-chat-header">
+        <div>
+          <strong>Live Support</strong>
+          <p>Medipol Pan-African Club</p>
+        </div>
+        <button id="closeMiniChat">×</button>
+      </div>
+
+      <div class="mini-chat-body">
+        <p class="bot-msg">Hello 👋 How can we help you?</p>
+
+        <a href="https://www.instagram.com/pan_africanistanbul/" target="_blank">
+          Chat on Instagram
+        </a>
+
+        <a href="mailto:panafricanclub@medipol.edu.tr">
+          Send Email
+        </a>
+      </div>
+    </div>
+
+
+   <footer id="contact">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-lg-4">
+          <div class="footer-brand">Medipol <span>Pan-African</span></div>
+          <p class="footer-text">Celebrating African unity, culture and excellence at Istanbul Medipol University.</p>
+          <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">WhatsApp</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-links">
+            <li>panafricanclub@medipol.edu.tr</li>
+            <li>Istanbul Medipol University</li>
+            <li>Istanbul, Türkiye</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Istanbul Medipol Pan-African Club. All rights reserved.</p>
+        <div class="footer-motto">One Africa. One Future. 🌍</div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>

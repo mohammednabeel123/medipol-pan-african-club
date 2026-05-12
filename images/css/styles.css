@@ -523,3 +523,507 @@
   max-width: 850px;
   margin: 25px 0;
 }
+
+
+/* ========================================
+   EVENT DETAILS PAGE
+======================================== */
+
+.page-section {
+  padding-top: 150px;
+  padding-bottom: 100px;
+  min-height: 100vh;
+  background: #050505;
+}
+
+.event-detail-card {
+  background: #111111;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.event-detail-image {
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(15,61,46,0.95),
+      rgba(7,26,18,0.96)
+    );
+}
+
+.event-detail-content {
+  padding: 60px;
+}
+
+.event-detail-content .section-title {
+  margin: 20px 0 30px;
+}
+
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.event-meta div {
+  padding: 12px 18px;
+  border: 1px solid rgba(212,175,55,0.18);
+  border-radius: 4px;
+  background: rgba(255,255,255,0.02);
+}
+
+.event-meta strong {
+  color: var(--gold);
+  margin-right: 6px;
+}
+
+.event-full-description {
+  color: rgba(255,255,255,0.72);
+  line-height: 1.9;
+  font-size: 1.05rem;
+  margin-bottom: 45px;
+  max-width: 950px;
+}
+
+/* ========================================
+   EXTRA EVENT SECTIONS
+======================================== */
+
+.event-extra-section {
+  margin-bottom: 45px;
+}
+
+.event-extra-section h3 {
+  color: var(--gold);
+  margin-bottom: 18px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* ========================================
+   BADGES / COUNTRIES
+======================================== */
+
+.countries-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.country-badge {
+  background: rgba(212,175,55,0.12);
+  border: 1px solid rgba(212,175,55,0.25);
+  color: var(--gold);
+
+  padding: 10px 18px;
+  border-radius: 40px;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition: 0.3s ease;
+}
+
+.country-badge:hover {
+  background: var(--gold);
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   LISTS
+======================================== */
+
+.event-highlights {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.event-highlights li {
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.event-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 50px;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .event-detail-image {
+    height: 220px;
+    font-size: 5rem;
+  }
+
+  .event-detail-content {
+    padding: 35px 24px;
+  }
+
+  .event-meta {
+    flex-direction: column;
+  }
+
+  .event-actions {
+    flex-direction: column;
+  }
+
+  .country-badge {
+    width: 100%;
+    text-align: center;
+  }
+} 
+
+
+.gallery-card {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #181818;
+  border: 1px solid rgba(201,168,76,0.14);
+}
+
+.gallery-card-large {
+  height: 340px;
+}
+
+.gallery-placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  background: linear-gradient(135deg, var(--green), #0f2a1e);
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover .gallery-placeholder {
+  transform: scale(1.08);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.88), rgba(0,0,0,0.2));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+}
+
+.gallery-overlay h3 {
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.gallery-overlay p {
+  color: rgba(245,240,232,0.7);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+
+.team-card {
+  background: #181818;
+  border: 1px solid rgba(201,168,76,0.14);
+  border-radius: 6px;
+  padding: 36px 28px;
+  height: 100%;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.35);
+}
+
+.team-avatar {
+  width: 95px;
+  height: 95px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green), #0f2a1e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  border: 1px solid rgba(201,168,76,0.3);
+}
+
+.team-card h3 {
+  color: var(--cream);
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+}
+
+.team-role {
+  color: var(--gold);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.team-bio {
+  color: rgba(245,240,232,0.58);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+
+/* ========================================
+   CONTACT PAGE
+======================================== */
+
+.contact-card {
+  background: #181818;
+  border: 1px solid rgba(201,168,76,0.14);
+  border-radius: 6px;
+  padding: 34px 26px;
+  height: 100%;
+  transition: 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.35);
+}
+
+.contact-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green), #0f2a1e);
+  border: 1px solid rgba(201,168,76,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 2rem;
+  margin-bottom: 22px;
+}
+
+.contact-card h3 {
+  color: var(--cream);
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.contact-card p {
+  color: rgba(245,240,232,0.58);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.contact-form-card,
+.contact-info-panel {
+  background: #181818;
+  border: 1px solid rgba(201,168,76,0.14);
+  border-radius: 6px;
+  padding: 42px;
+  height: 100%;
+}
+
+.contact-title {
+  color: var(--cream);
+  font-size: 2rem;
+  margin-bottom: 18px;
+}
+
+.contact-text {
+  color: rgba(245,240,232,0.58);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.form-label {
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.custom-input {
+  background: #0d0d0d;
+  border: 1px solid rgba(201,168,76,0.18);
+  color: var(--cream);
+  border-radius: 4px;
+  padding: 13px 15px;
+}
+
+.custom-input:focus {
+  background: #0d0d0d;
+  color: var(--cream);
+  border-color: var(--gold);
+  box-shadow: none;
+}
+
+.custom-input::placeholder {
+  color: rgba(245,240,232,0.3);
+}
+
+.contact-info-list {
+  display: grid;
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.contact-info-item i {
+  color: var(--gold);
+  font-size: 1.8rem;
+  margin-top: 4px;
+}
+
+.contact-info-item h4 {
+  color: var(--cream);
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.contact-info-item p {
+  color: rgba(245,240,232,0.55);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.contact-social-big {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+/* MAP */
+.map-section {
+  background: #0d0d0d;
+}
+
+.map-wrapper {
+  border: 1px solid rgba(201,168,76,0.18);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+}
+
+/* RESPONSIVE CONTACT */
+@media (max-width: 768px) {
+  .contact-form-card,
+  .contact-info-panel {
+    padding: 30px 22px;
+  }
+
+  .contact-title {
+    font-size: 1.6rem;
+  }
+
+  .contact-social-big {
+    flex-direction: column;
+  }
+
+  .contact-social-big a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .map-wrapper iframe {
+    height: 320px;
+  }
+}
+
+
+.instagram-icon {
+  color: #E1306C;
+}
+
+.youtube-icon {
+  color: #FF0000;
+}
+
+.whatsapp-icon {
+  color: #25D366;
+}
+
+.email-icon {
+  color: var(--gold);
+}
+
+.contact-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green), #0f2a1e);
+  border: 1px solid rgba(201,168,76,0.3);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2rem;
+  margin-bottom: 22px;
+}
+
+.contact-icon i {
+  transition: 0.3s ease;
+}
+
+/* Instagram */
+.instagram-icon i {
+  color: #E1306C;
+}
+
+/* YouTube */
+.youtube-icon i {
+  color: #FF0000;
+}
+
+/* WhatsApp */
+.whatsapp-icon i {
+  color: #25D366;
+}
+
+/* Email */
+.email-icon i {
+  color: #d4af37;
+}
+
+/* Location */
+.location-icon i {
+  color: #4CAF50;
+}
+
+.contact-card:hover .contact-icon i {
+  transform: scale(1.12);
+}
+

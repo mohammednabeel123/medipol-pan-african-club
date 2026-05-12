@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>İstanbul Medipol Pan-African Club</title>
+  <title>Détails de l’événement | Medipol Pan-African</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
   <link rel="stylesheet" href="../css/styles.css">
   <script src="../js/main.js" defer></script>
+  <script src="../js/events-data.js"></script>
 </head>
 <style>
   .floating-contact-widget {
@@ -221,161 +223,66 @@
   }
 }
 </style>
-
 <body>
+
   <header>
     <nav class="navbar navbar-expand-lg fixed-top custom-navbar" id="mainNav">
       <div class="container">
+
         <a class="navbar-brand" href="index.html">
           Medipol <span>Pan-African</span>
         </a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="mainNavbar">
           <ul class="navbar-nav ms-auto align-items-lg-center">
-            <li class="nav-item"><a class="nav-link active" href="index.html">Ana Sayfa</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">Hakkımızda</a></li>
-            <li class="nav-item"><a class="nav-link" href="events.html">Etkinlikler</a></li>
-            <li class="nav-item"><a class="nav-link" href="gallery.html">Galeri</a></li>
-            <li class="nav-item"><a class="nav-link" href="team.html">Ekip</a></li>
-            <li class="nav-item"><a class="nav-link" href="#join">Bize Katıl</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">İletişim</a></li>
+
+            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+            <li class="nav-item"><a class="nav-link active" href="events.html">Événements</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Galerie</a></li>
+            <li class="nav-item"><a class="nav-link" href="team.html">Équipe</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#join">Nous rejoindre</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 
             <li class="nav-item dropdown ms-lg-3">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">TR</a>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">FR</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/index.html">English</a></li>
-                <li><a class="dropdown-item" href="../fr/index.html">Français</a></li>
-                <li><a class="dropdown-item" href="../tr/index.html">Türkçe</a></li>
+                <li><a class="dropdown-item" href="event-details.html">English</a></li>
+                <li><a class="dropdown-item" href="../fr/event-details.html">Français</a></li>
+                <li><a class="dropdown-item" href="../tr/event-details.html">Türkçe</a></li>
               </ul>
             </li>
+
           </ul>
         </div>
+
       </div>
     </nav>
+
     <div class="african-pattern-bar"></div>
   </header>
 
-  <section class="hero" id="home">
-    <img src="../images/logo.jpeg" alt="Kulüp Logosu" class="hero-logo-bg">
-    <div class="container">
-      <div class="hero-content fade-up">
-        <div class="hero-eyebrow">İstanbul Medipol Üniversitesi</div>
-        <h1>
-          Afrika <span>Birliğini,</span> Kültürünü ve Mükemmelliğini Kutluyoruz
-        </h1>
-        <p>
-          İstanbul Medipol Üniversitesi’nde topluluk oluşturuyor ve Afrika mirasını tanıtıyoruz.
-          Tek kıta, tek ses, sonsuz kültür.
-        </p>
-        <div class="d-flex flex-wrap gap-3">
-          <a href="#join" class="btn-gold">Kulübe Katıl</a>
-          <a href="#events" class="btn-outline-gold">Yaklaşan Etkinlikler</a>
-        </div>
-        <div class="hero-stats">
-          <div>
-            <div class="stat-num fade-up">20+</div>
-            <div class="stat-label">Ülke</div>
-          </div>
-          <div>
-            <div class="stat-num fade-up">150+</div>
-            <div class="stat-label">Üye</div>
-          </div>
-          <div>
-            <div class="stat-num fade-up">12+</div>
-            <div class="stat-label">Etkinlik / Yıl</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-scroll">
-      <span>Kaydır</span>
-      <span>↓</span>
-    </div>
-  </section>
-
-  <section class="intro-section" id="about">
-    <div class="container">
-      <div class="row align-items-center g-5">
-
-        <div class="col-lg-6 fade-up">
-          <div class="section-eyebrow">Biz Kimiz?</div>
-
-          <h2 class="section-title">
-            Tek Afrika.<br><span>Birçok Ses.</span>
-          </h2>
-
-          <div class="section-line"></div>
-
-          <p class="section-subtitle">
-            Pan-African Kulübümüz, Afrika’dan ve diasporadan gelen öğrencileri bir araya getirerek
-            İstanbul Medipol Üniversitesi’nde kültürü, liderliği, eğitimi ve birliği kutlar.
-          </p>
-        </div>
-
-        <div class="col-lg-6 fade-up">
-          <div class="intro-card">
-            <h3>Misyonumuz</h3>
-
-            <p>
-              Afrika mirasını tanıtan, uluslararası öğrencileri destekleyen ve kültür,
-              eğitim ve iş birliği yoluyla liderliği geliştiren güçlü bir öğrenci topluluğu oluşturmak.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="events-section" id="events">
+  <section class="event-detail-section page-section">
     <div class="container">
 
-      <div class="text-center mb-5 fade-up">
-        <div class="section-eyebrow">Neler Oluyor?</div>
+      <a href="events.html" class="btn-learn mb-4 d-inline-block">
+        ← Retour aux événements
+      </a>
 
-        <h2 class="section-title">
-          Yaklaşan <span>Etkinlikler</span>
-        </h2>
-
-        <div class="section-line mx-auto"></div>
-      </div>
-
-      <div class="row g-4" id="eventsContainer"></div>
-
-      <div class="text-center mt-5">
-        <a href="events.html" class="btn-gold">
-          Tüm Etkinlikleri Gör
-        </a>
+      <div id="eventDetails" class="event-detail-card fade-up visible">
+        <!-- Les détails de l’événement seront chargés ici avec JavaScript -->
       </div>
 
     </div>
   </section>
 
-  <section class="cta-section" id="join">
-    <div class="container text-center position-relative">
-      <div class="section-eyebrow">Daha Büyük Bir Topluluğun Parçası Ol</div>
 
-      <h2 class="section-title">
-        Harekete <span>Katıl</span>
-      </h2>
 
-      <p>
-        Afrikalı olun, diasporadan olun ya da sadece Afrika kıtasına ilgi duyun —
-        burada sizin için bir yer var. Gelin birlikte topluluk, kültür ve güçlü bağlar kuralım.
-      </p>
 
-      <div class="cta-buttons">
-        <a href="contact.html" class="btn-gold">Üye Ol</a>
-        <a href="contact.html" class="btn-white">Gönüllü Ol</a>
-        <a href="https://instagram.com" target="_blank" class="btn-outline-white">Instagram’da Takip Et</a>
-      </div>
-    </div>
-  </section>
-
-  
   <div class="floating-contact-widget">
 
   <a href="https://www.instagram.com/pan_africanistanbul/" target="_blank" class="float-option option-instagram">
@@ -425,15 +332,19 @@
     </div>
   </div>
 
+
   <footer id="contact">
     <div class="container">
+
       <div class="row gy-5">
 
         <div class="col-lg-4">
-          <div class="footer-brand">Medipol <span>Pan-African</span></div>
+          <div class="footer-brand">
+            Medipol <span>Pan-African</span>
+          </div>
 
           <p class="footer-text">
-            İstanbul Medipol Üniversitesi’nde Afrika birliğini, kültürünü ve mükemmelliğini kutluyoruz.
+            Célébrer l’unité, la culture et l’excellence africaines à l’Université Istanbul Medipol.
           </p>
 
           <div class="social-links">
@@ -444,37 +355,154 @@
         </div>
 
         <div class="col-lg-4">
-          <h4 class="footer-heading">Hızlı Bağlantılar</h4>
+          <h4 class="footer-heading">Liens rapides</h4>
 
           <ul class="footer-links">
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkımızda</a></li>
-            <li><a href="events.html">Etkinlikler</a></li>
-            <li><a href="gallery.html">Galeri</a></li>
-            <li><a href="team.html">Ekip</a></li>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="events.html">Événements</a></li>
+            <li><a href="gallery.html">Galerie</a></li>
+            <li><a href="team.html">Équipe</a></li>
           </ul>
         </div>
 
         <div class="col-lg-4">
-          <h4 class="footer-heading">İletişim</h4>
+          <h4 class="footer-heading">Contact</h4>
 
           <ul class="footer-links">
             <li>panafricanclub@medipol.edu.tr</li>
-            <li>İstanbul Medipol Üniversitesi</li>
-            <li>İstanbul, Türkiye</li>
+            <li>Université Istanbul Medipol</li>
+            <li>Istanbul, Türkiye</li>
           </ul>
         </div>
 
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 İstanbul Medipol Pan-African Club. Tüm hakları saklıdır.</p>
-        <div class="footer-motto">Tek Afrika. Tek Gelecek. 🌍</div>
+        <p>© 2026 Club Panafricain d’Istanbul Medipol. Tous droits réservés.</p>
+        <div class="footer-motto">Une Afrique. Un avenir. 🌍</div>
       </div>
+
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const eventId = params.get("id");
+
+      const selectedEvent = events.find(event => event.id === eventId);
+      const eventDetails = document.getElementById("eventDetails");
+
+      const renderList = (title, items) => {
+        if (!items || items.length === 0) return "";
+
+        return `
+          <div class="event-extra-section">
+            <h3>${title}</h3>
+
+            <ul class="event-highlights">
+              ${items.map(item => `<li>${item}</li>`).join("")}
+            </ul>
+          </div>
+        `;
+      };
+
+      const renderBadges = (title, items) => {
+        if (!items || items.length === 0) return "";
+
+        return `
+          <div class="event-extra-section">
+            <h3>${title}</h3>
+
+            <div class="countries-grid">
+              ${items.map(item => `
+                <span class="country-badge">${item}</span>
+              `).join("")}
+            </div>
+          </div>
+        `;
+      };
+
+      if (selectedEvent) {
+        eventDetails.innerHTML = `
+          <div class="event-detail-image">
+            ${selectedEvent.image}
+          </div>
+
+          <div class="event-detail-content">
+
+            <div class="event-date">
+              ${selectedEvent.date}
+            </div>
+
+            <h1 class="section-title">
+              ${selectedEvent.title}
+            </h1>
+
+            <div class="event-meta">
+              <div>
+                <strong>Catégorie :</strong>
+                <span>${selectedEvent.category}</span>
+              </div>
+
+              <div>
+                <strong>Lieu :</strong>
+                <span>${selectedEvent.location}</span>
+              </div>
+            </div>
+
+            <p class="event-full-description">
+              ${selectedEvent.fullDescription}
+            </p>
+
+            ${renderBadges("Pays et communautés représentés", selectedEvent.representedCountries)}
+
+            ${renderList("Leaders et héros africains présentés", selectedEvent.leaders)}
+
+            ${renderList("Décorations culturelles", selectedEvent.decorations)}
+
+            ${renderList("Quiz interactif sur l’Afrique", selectedEvent.quizDetails)}
+
+            ${renderList("Prix culturels", selectedEvent.prizes)}
+
+            ${renderBadges("Pays du showcase culinaire", selectedEvent.foodShowcase)}
+
+            ${renderList("Points forts de l’événement", selectedEvent.highlights)}
+
+            <div class="event-actions">
+              <a href="contact.html" class="btn-gold">
+                Contacter les organisateurs
+              </a>
+
+              <a href="events.html" class="btn-outline-gold">
+                Découvrir plus d’événements
+              </a>
+            </div>
+
+          </div>
+        `;
+      } else {
+        eventDetails.innerHTML = `
+          <div class="event-detail-content">
+            <h1 class="section-title">
+              Événement <span>introuvable</span>
+            </h1>
+
+            <p class="event-full-description">
+              Cet événement n’existe pas ou a peut-être été supprimé.
+            </p>
+
+            <a href="events.html" class="btn-gold">
+              Retour aux événements
+            </a>
+          </div>
+        `;
+      }
+    });
+  </script>
+
 </body>
-</html> 
+</html>
