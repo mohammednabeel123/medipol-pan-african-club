@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://medipolpanafrica.it.com/</loc>
+  </url>
+
+  <url>
+    <loc>https://medipolpanafrica.it.com/about.html</loc>
+  </url>
+
+  <url>
+    <loc>https://medipolpanafrica.it.com/events.html</loc>
+  </url>
+
+  <url>
+    <loc>https://medipolpanafrica.it.com/event-details.html</loc>
+  </url>
+
+  <url>
+    <loc>https://medipolpanafrica.it.com/gallery.html</loc>
+  </url>
+
+  <url>
+    <loc>https://medipolpanafrica.it.com/team.html</loc>
+  </url>
+
+  <url>
+    <loc>https://medipolpanafrica.it.com/contact.html</loc>
+  </url>
+
+  <!-- French -->
+
+  <url>
+    <loc>https://medipolpanafrica.it.com/fr/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://medipolpanafrica.it.com/fr/about.html</loc>
+  </url>
+
+  <url>
+    <loc>https://medipolpanafrica.it.com/fr/events.html</loc>
+  </url>
+
+  <!-- Turkish -->
+
+  <url>
+    <loc>https://medipolpanafrica.it.com/tr/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://medipolpanafrica.it.com/tr/about.html</loc>
+  </url>
+
+  <url>
+    <loc>https://medipolpanafrica.it.com/tr/events.html</loc>
+  </url>
+
+</urlset>
