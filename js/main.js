@@ -150,18 +150,34 @@ function renderEventCards() {
 
   eventsContainer.innerHTML = "";
 
-  events.forEach(event => {
-    eventsContainer.innerHTML += `
+  const today = new Date();
+
+  const upcomingEvents = events
+    .filter(event => new Date(event.date) >= today)
+    .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+  const pastEvents = events
+    .filter(event => new Date(event.date) < today)
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  const renderCards = (eventList, statusText) => {
+    return eventList.map(event => `
       <div class="col-md-4 fade-up visible">
         <div class="event-card">
-          <div class="event-img">
-            ${event.image}
-          </div>
+
+         <div class="event-img">
+          ${event.image}
+        </div>
 
           <div class="event-body">
+
             <div class="event-date">
               ${event.date}
             </div>
+
+            <span class="event-status">
+              ${statusText}
+            </span>
 
             <h3>
               ${event.title}
@@ -171,14 +187,33 @@ function renderEventCards() {
               ${event.shortDescription}
             </p>
 
-            <a href="event-details.html?id=${event.id}" class="btn-learn">
+            <a href="/event-details.html?id=${event.id}" class="btn-learn">
               Learn More
             </a>
+
           </div>
         </div>
       </div>
+    `).join("");
+  };
+
+  if (upcomingEvents.length > 0) {
+    eventsContainer.innerHTML += `
+      <div class="col-12">
+        <h2 class="section-title small-title">Upcoming <span>Events</span></h2>
+      </div>
+      ${renderCards(upcomingEvents, "Upcoming")}
     `;
-  });
+  }
+
+  if (pastEvents.length > 0) {
+    eventsContainer.innerHTML += `
+      <div class="col-12 mt-5">
+        <h2 class="section-title small-title">Past <span>Events</span></h2>
+      </div>
+      ${renderCards(pastEvents, "Past Event")}
+    `;
+  }
 }
 
 function renderEventDetails() {
@@ -224,62 +259,62 @@ function renderEventDetails() {
   };
 
   if (selectedEvent) {
-    eventDetails.innerHTML = `
-      <div class="event-detail-image">
-        ${selectedEvent.image}
+  eventDetails.innerHTML = `
+  <div class="event-detail-image">
+  ${selectedEvent.image}
+</div>
+
+    <div class="event-detail-content">
+      <div class="event-date">
+        ${selectedEvent.date}
       </div>
 
-      <div class="event-detail-content">
-        <div class="event-date">
-          ${selectedEvent.date}
+      <h1 class="section-title">
+        ${selectedEvent.title}
+      </h1>
+
+      <div class="event-meta">
+        <div>
+          <strong>Category:</strong>
+          <span>${selectedEvent.category}</span>
         </div>
 
-        <h1 class="section-title">
-          ${selectedEvent.title}
-        </h1>
-
-        <div class="event-meta">
-          <div>
-            <strong>Category:</strong>
-            <span>${selectedEvent.category}</span>
-          </div>
-
-          <div>
-            <strong>Location:</strong>
-            <span>${selectedEvent.location}</span>
-          </div>
-        </div>
-
-        <p class="event-full-description">
-          ${selectedEvent.fullDescription}
-        </p>
-
-        ${renderBadges("Represented Countries & Communities", selectedEvent.representedCountries)}
-
-        ${renderList("African Leaders & Heroes Display", selectedEvent.leaders)}
-
-        ${renderList("Cultural Decorations", selectedEvent.decorations)}
-
-        ${renderList("Interactive African Knowledge Quiz", selectedEvent.quizDetails)}
-
-        ${renderList("Cultural Prizes", selectedEvent.prizes)}
-
-        ${renderBadges("Food Showcase Countries", selectedEvent.foodShowcase)}
-
-        ${renderList("Event Highlights", selectedEvent.highlights)}
-
-        <div class="event-actions">
-          <a href="contact.html" class="btn-gold">
-            Contact The Organizers
-          </a>
-
-          <a href="events.html" class="btn-outline-gold">
-            Explore More Events
-          </a>
+        <div>
+          <strong>Location:</strong>
+          <span>${selectedEvent.location}</span>
         </div>
       </div>
-    `;
-  } else {
+
+      <p class="event-full-description">
+        ${selectedEvent.fullDescription}
+      </p>
+
+      ${renderBadges("Represented Countries & Communities", selectedEvent.representedCountries)}
+
+      ${renderList("African Leaders & Heroes Display", selectedEvent.leaders)}
+
+      ${renderList("Cultural Decorations", selectedEvent.decorations)}
+
+      ${renderList("Interactive African Knowledge Quiz", selectedEvent.quizDetails)}
+
+      ${renderList("Cultural Prizes", selectedEvent.prizes)}
+
+      ${renderBadges("Food Showcase Countries", selectedEvent.foodShowcase)}
+
+      ${renderList("Event Highlights", selectedEvent.highlights)}
+
+      <div class="event-actions">
+        <a href="contact.html" class="btn-gold">
+          Contact The Organizers
+        </a>
+
+        <a href="events.html" class="btn-outline-gold">
+          Explore More Events
+        </a>
+      </div>
+    </div>
+  `;
+} else {
     eventDetails.innerHTML = `
       <div class="event-detail-content">
         <h1 class="section-title">
