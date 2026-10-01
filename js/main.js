@@ -133,6 +133,40 @@
       "Photos and memories",
       "Community bonding"
     ]
+  },
+   {
+    id: "post-Mid-hangout",
+    title: "Pinic",
+    date: "November,2026",
+    category: "Community",
+    location: "Istanbul",
+    image: "🎉",
+
+    shortDescription:
+      "A relaxed social gathering for students after Midterm exams.",
+
+    // fullDescription:
+    //   "The Post-Exam Hangout is a fun and relaxed social gathering organized after the examination period. It gives students a chance to unwind, connect, take photos, play games, and enjoy time together after a busy semester.",
+
+    representedCountries: [],
+
+    leaders: [],
+
+    decorations: [],
+
+    quizDetails: [],
+
+    prizes: [],
+
+    foodShowcase: [],
+
+    highlights: [
+      "Post-exam relaxation",
+      "Student networking",
+      // "Games and social activities",
+      // "Photos and memories",
+      "Community bonding"
+    ]
   }
 ];
 
