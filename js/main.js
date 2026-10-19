@@ -1,7 +1,7 @@
 // Navbar scroll effect
     const nav = document.getElementById('mainNav');
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
+      if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
     });
 
     // Scroll reveal
@@ -136,8 +136,8 @@
   },
    {
     id: "post-Mid-hangout",
-    title: "Pinic",
-    date: "November,2026",
+    title: "Picnic",
+    date: "November 2026",
     category: "Community",
     location: "Istanbul",
     image: "🎉",
@@ -177,6 +177,18 @@ document.addEventListener("DOMContentLoaded", () => {
   initScrollReveal();
 });
 
+// Parse event dates consistently across browsers. Safari (all iPhone browsers)
+// rejects loose formats like "November,2026" that Chrome accepts, which made
+// events disappear on iOS. Supports "May 15, 2026" and "November 2026".
+function parseEventDate(value) {
+  const match = String(value).trim().match(/^([A-Za-z]+)\s*,?\s*(?:(\d{1,2})\s*,?\s*)?(\d{4})$/);
+  if (match) {
+    const month = new Date(`${match[1]} 1, 2000`).getMonth();
+    if (!isNaN(month)) return new Date(Number(match[3]), month, Number(match[2] || 1));
+  }
+  return new Date(value);
+}
+
 function renderEventCards() {
   const eventsContainer = document.getElementById("eventsContainer");
 
@@ -187,12 +199,12 @@ function renderEventCards() {
   const today = new Date();
 
   const upcomingEvents = events
-    .filter(event => new Date(event.date) >= today)
-    .sort((a, b) => new Date(a.date) - new Date(b.date));
+    .filter(event => parseEventDate(event.date) >= today)
+    .sort((a, b) => parseEventDate(a.date) - parseEventDate(b.date));
 
   const pastEvents = events
-    .filter(event => new Date(event.date) < today)
-    .sort((a, b) => new Date(b.date) - new Date(a.date));
+    .filter(event => !(parseEventDate(event.date) >= today))
+    .sort((a, b) => parseEventDate(b.date) - parseEventDate(a.date));
 
   const renderCards = (eventList, statusText) => {
     return eventList.map(event => `
@@ -320,7 +332,7 @@ function renderEventDetails() {
       </div>
 
       <p class="event-full-description">
-        ${selectedEvent.fullDescription}
+        ${selectedEvent.fullDescription || selectedEvent.shortDescription}
       </p>
 
       ${renderBadges("Represented Countries & Communities", selectedEvent.representedCountries)}

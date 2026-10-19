@@ -518,7 +518,7 @@
           </div>
 
           <p class="event-full-description">
-            ${selectedEvent.fullDescription}
+            ${selectedEvent.fullDescription || selectedEvent.shortDescription}
           </p>
 
           ${renderBadges("Temsil Edilen Ülkeler & Topluluklar", selectedEvent.representedCountries)}
@@ -575,7 +575,6 @@
   });
   </script>
 
-  <script src="js/main.js"></script>
 
 </body>
 </html>

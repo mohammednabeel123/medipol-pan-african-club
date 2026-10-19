@@ -453,7 +453,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <p class="event-full-description">
-          ${selectedEvent.fullDescription}
+          ${selectedEvent.fullDescription || selectedEvent.shortDescription}
         </p>
 
         ${renderBadges("Represented Countries & Communities", selectedEvent.representedCountries)}
@@ -502,6 +502,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<script src="js/main.js"></script>
 </body>
 </html>

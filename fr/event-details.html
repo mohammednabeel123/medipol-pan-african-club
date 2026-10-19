@@ -455,7 +455,7 @@
             </div>
 
             <p class="event-full-description">
-              ${selectedEvent.fullDescription}
+              ${selectedEvent.fullDescription || selectedEvent.shortDescription}
             </p>
 
             ${renderBadges("Pays et communautés représentés", selectedEvent.representedCountries)}
