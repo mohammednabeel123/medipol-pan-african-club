@@ -136,7 +136,7 @@
   },
    {
     id: "post-Mid-hangout",
-    title: "Pinic",
+    title: "Picnic",
     date: "November,2026",
     category: "Community",
     location: "Istanbul",
