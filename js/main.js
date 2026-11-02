@@ -421,3 +421,60 @@ if (closeMiniChat && miniChatPanel) {
     miniChatPanel.classList.remove("show");
   });
 }
+
+
+const teamMembers = [
+  {
+    image: "/images/president.jpeg",
+    name: {
+      en: "President",
+      fr: "Président(e)",
+      tr: "Başkan"
+    },
+    role: {
+      en: "Club Leadership",
+      fr: "Direction du club",
+      tr: "Kulüp Yönetimi"
+    },
+    bio: {
+      en: "Leads the club vision, coordinates executive decisions, and represents the Pan-African community.",
+      fr: "Dirige la vision du club, coordonne les décisions exécutives et représente la communauté panafricaine.",
+      tr: "Kulübün vizyonuna liderlik eder, yönetim kararlarını koordine eder ve Pan-Afrika topluluğunu temsil eder."
+    }
+  }
+
+  // Add more team members here
+];
+
+function getCurrentLanguage() {
+  const path = window.location.pathname.toLowerCase();
+
+  if (path.startsWith("/fr/")) return "fr";
+  if (path.startsWith("/tr/")) return "tr";
+
+  return "en";
+}
+
+function renderTeam() {
+  const container = document.getElementById("teamGrid");
+
+  if (!container) return;
+
+  const language = getCurrentLanguage();
+
+  container.innerHTML = teamMembers.map(member => `
+    <div class="col-md-4 fade-up visible">
+      <div class="team-card">
+        <div class="team-avatar">
+          <img src="${member.image}" alt="${member.name[language]}">
+        </div>
+
+        <h3>${member.name[language]}</h3>
+        <p class="team-role">${member.role[language]}</p>
+        <p class="team-bio">${member.bio[language]}</p>
+      </div>
+    </div>
+  `).join("");
+}
+
+document.addEventListener("DOMContentLoaded", renderTeam);
