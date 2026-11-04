@@ -262,21 +262,23 @@
   <!-- HERO SECTION -->
 
    <!-- HERO SECTION -->
+
 <section class="hero" id="home">
 
-    <video class="hero-video"
-           autoplay
-           muted
-           loop
-           playsinline
-           preload="metadata"
-           poster="images/hero-poster.jpg">
+    <!-- Background video -->
+    <div class="hero-video">
+    <iframe
+        src="https://www.youtube-nocookie.com/embed/sMUhldxWw_w?autoplay=1&mute=1&controls=0&loop=1&playlist=sMUhldxWw_w&playsinline=1&rel=0"
+        title="Pan-African Club background video"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        frameborder="0">
+    </iframe>
+</div>
 
-        <source src="videos/Africa2.mp4" type="video/mp4">
-    </video>
+    <!-- Dark overlay -->
+    <div class="hero-overlay"></div>
 
-   
-
+    <!-- Hero content -->
     <div class="container">
         <div class="hero-content fade-up">
 
@@ -284,7 +286,9 @@
                 Istanbul Medipol University
             </div>
 
-            <h1>Celebrating African <span>Unity,</span> Culture & Excellence</h1>
+            <h1>
+                Celebrating African <span>Unity,</span> Culture & Excellence
+            </h1>
 
             <p>
                 Building community and showcasing African heritage at Istanbul Medipol University.
@@ -322,6 +326,7 @@
     </div>
 
 </section>
+
   <!-- INTRO SECTION -->
   <section class="intro-section" id="about">
     <div class="container">

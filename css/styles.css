@@ -630,3 +630,60 @@
 .event-extra-section .btn-outline-gold {
     cursor: pointer;
 }
+
+
+.hero {
+    position: relative;
+    min-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    isolation: isolate;
+}
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Oversized iframe to cover the entire hero */
+.hero-video iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 177.78vh;
+    height: 56.25vw;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    border: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+   
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-scroll {
+    position: absolute;
+    z-index: 2;
+    bottom: 25px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 85vh;
+    }
+
+   
+}
