@@ -81,75 +81,7 @@
     }
 
     /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      background:
-        linear-gradient(135deg, rgba(13,13,13,0.82) 0%, rgba(27,67,50,0.65) 50%, rgba(13,13,13,0.88) 100%),
-        url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1600&q=80') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9A84C' fill-opacity='0.07'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
-      pointer-events: none;
-    }
-
-    /* faded logo bg */
-    .hero-logo-bg {
-      position: absolute;
-      right: 6%;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 340px;
-      opacity: 0.07;
-      filter: grayscale(1) contrast(1.2);
-      pointer-events: none;
-      border-radius: 50%;
-    }
-
-    .hero-content { position: relative; z-index: 2; max-width: 780px; }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.73rem;
-      font-weight: 600;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 24px;
-    }
-    .hero-eyebrow::before, .hero-eyebrow::after {
-      content: '';
-      width: 30px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .hero h1 {
-      font-size: clamp(2.6rem, 5.5vw, 4.8rem);
-      font-weight: 900;
-      line-height: 1.06;
-      color: var(--cream);
-      margin-bottom: 24px;
-    }
-    .hero h1 span { color: var(--gold); }
-
-    .hero p {
-      font-size: 1.05rem;
-      color: rgba(245,240,232,0.75);
-      max-width: 540px;
-      line-height: 1.75;
-      margin-bottom: 40px;
-      font-weight: 300;
-    }
-
+    
     .btn-gold {
       background: var(--gold);
       color: var(--black);
@@ -743,55 +675,6 @@
 }
 
 
-.team-card {
-  background: #181818;
-  border: 1px solid rgba(201,168,76,0.14);
-  border-radius: 6px;
-  padding: 36px 28px;
-  height: 100%;
-  text-align: center;
-  transition: 0.3s ease;
-}
-
-.team-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--gold);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.35);
-}
-
-.team-avatar {
-  width: 95px;
-  height: 95px;
-  margin: 0 auto 24px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--green), #0f2a1e);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.8rem;
-  border: 1px solid rgba(201,168,76,0.3);
-}
-
-.team-card h3 {
-  color: var(--cream);
-  font-size: 1.35rem;
-  margin-bottom: 8px;
-}
-
-.team-role {
-  color: var(--gold);
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-
-.team-bio {
-  color: rgba(245,240,232,0.58);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin: 0;
-}
 
 
 
@@ -1027,17 +910,61 @@
   transform: scale(1.12);
 }
 
-.team-avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 1rem;
+/* ========================================
+   TEAM SECTION
+======================================== */
+
+/* HERO VIDEO BACKGROUND */
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    background: #0B0D0B;
 }
 
-.team-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* crops instead of squashing */
-  display: block;
+/* Video */
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+/* Pan-African dark overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(11, 13, 11, 0.82),
+        rgba(18, 53, 38, 0.68),
+        rgba(11, 13, 11, 0.88)
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Hero content */
+.hero > .container,
+.hero-scroll {
+    position: relative;
+    z-index: 2;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 90vh;
+    }
+
+    .hero-video {
+        object-position: center;
+    }
 }
