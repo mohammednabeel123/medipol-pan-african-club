@@ -1,60 +1,150 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
+  <!-- HOME -->
   <url>
-    <loc>https://medipolpanafrica.com/</loc>
+    <loc>https://medipolafrica.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/index.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://medipolafrica.com/"/>
   </url>
 
   <url>
-    <loc>https://medipolpanafrica.com/about.html</loc>
+    <loc>https://medipolafrica.com/fr/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/index.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/index.html"/>
   </url>
 
   <url>
-    <loc>https://medipolpanafrica.com/events.html</loc>
+    <loc>https://medipolafrica.com/tr/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/index.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/index.html"/>
   </url>
 
+  <!-- ABOUT -->
   <url>
-    <loc>https://medipolpanafrica.com/event-details.html</loc>
+    <loc>https://medipolafrica.com/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/about.html"/>
   </url>
-
   <url>
-    <loc>https://medipolpanafrica.com/gallery.html</loc>
+    <loc>https://medipolafrica.com/fr/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/about.html"/>
   </url>
-
   <url>
-    <loc>https://medipolpanafrica.com/team.html</loc>
+    <loc>https://medipolafrica.com/tr/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/about.html"/>
   </url>
 
+  <!-- EVENTS -->
   <url>
-    <loc>https://medipolpanafrica.com/contact.html</loc>
+    <loc>https://medipolafrica.com/events.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/events.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/events.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/events.html"/>
   </url>
-
-  <!-- French -->
-
   <url>
-    <loc>https://medipolpanafrica.com/fr/index.html</loc>
+    <loc>https://medipolafrica.com/fr/events.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/events.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/events.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/events.html"/>
   </url>
-
   <url>
-    <loc>https://medipolpanafrica.com/fr/about.html</loc>
+    <loc>https://medipolafrica.com/tr/events.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/events.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/events.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/events.html"/>
   </url>
 
+  <!-- EVENT DETAILS -->
   <url>
-    <loc>https://medipolpanafrica.com/fr/events.html</loc>
+    <loc>https://medipolafrica.com/event-details.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/event-details.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/event-details.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/event-details.html"/>
   </url>
-
-  <!-- Turkish -->
-
   <url>
-    <loc>https://medipolpanafrica.com/tr/index.html</loc>
+    <loc>https://medipolafrica.com/fr/event-details.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/event-details.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/event-details.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/event-details.html"/>
+  </url>
+  <url>
+    <loc>https://medipolafrica.com/tr/event-details.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/event-details.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/event-details.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/event-details.html"/>
   </url>
 
+  <!-- GALLERY -->
   <url>
-    <loc>https://medipolpanafrica.com/tr/about.html</loc>
+    <loc>https://medipolafrica.com/gallery.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/gallery.html"/>
+  </url>
+  <url>
+    <loc>https://medipolafrica.com/fr/gallery.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/gallery.html"/>
+  </url>
+  <url>
+    <loc>https://medipolafrica.com/tr/gallery.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/gallery.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/gallery.html"/>
   </url>
 
+  <!-- TEAM -->
   <url>
-    <loc>https://medipolpanafrica.com/tr/events.html</loc>
+    <loc>https://medipolafrica.com/team.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/team.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/team.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/team.html"/>
   </url>
+  <url>
+    <loc>https://medipolafrica.com/fr/team.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/team.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/team.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/team.html"/>
+  </url>
+  <url>
+    <loc>https://medipolafrica.com/tr/team.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/team.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/team.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/team.html"/>
+  </url>
+
+  <!-- CONTACT -->
+  <url>
+    <loc>https://medipolafrica.com/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/contact.html"/>
+  </url>
+  <url>
+    <loc>https://medipolafrica.com/fr/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/contact.html"/>
+  </url>
+  <url>
+    <loc>https://medipolafrica.com/tr/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://medipolafrica.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medipolafrica.com/fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://medipolafrica.com/tr/contact.html"/>
+  </url>
+
 </urlset>
