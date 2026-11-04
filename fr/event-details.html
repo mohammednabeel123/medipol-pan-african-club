@@ -11,11 +11,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
   <link rel="stylesheet" href="../css/styles.css">
+
   <script src="../js/main.js" defer></script>
-  <script src="../js/events-data.js"></script>
-</head>
+
 <style>
-  .floating-contact-widget {
+.floating-contact-widget {
   position: fixed;
   right: 34px;
   bottom: 34px;
@@ -33,15 +33,12 @@
   position: absolute;
   right: 0;
   bottom: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: white;
   font-size: 1.65rem;
   text-decoration: none;
-
   box-shadow: 0 14px 35px rgba(0,0,0,0.35);
   transition: 0.35s ease;
 }
@@ -67,7 +64,6 @@
   pointer-events: auto;
 }
 
-/* pop-out circle positions */
 .floating-contact-widget.active .option-instagram {
   transform: translate(-105px, -15px) scale(1);
 }
@@ -84,26 +80,11 @@
   transform: translate(-125px, -125px) scale(1);
 }
 
-/* colors */
-.option-instagram {
-  background: #e1306c;
-}
+.option-instagram { background: #e1306c; }
+.option-email { background: #d4af37; color: #111; }
+.option-phone { background: #25d366; }
+.option-chat { background: #1e88e5; cursor: pointer; }
 
-.option-email {
-  background: #d4af37;
-  color: #111;
-}
-
-.option-phone {
-  background: #25d366;
-}
-
-.option-chat {
-  background: #1e88e5;
-  cursor: pointer;
-}
-
-/* labels */
 .float-option span {
   position: absolute;
   right: 78px;
@@ -124,7 +105,6 @@
   transform: translateX(0);
 }
 
-/* mini chat */
 .mini-chat-panel {
   position: fixed;
   right: 34px;
@@ -139,9 +119,7 @@
   box-shadow: 0 22px 60px rgba(0,0,0,0.45);
 }
 
-.mini-chat-panel.show {
-  display: block;
-}
+.mini-chat-panel.show { display: block; }
 
 .mini-chat-header {
   background: var(--green);
@@ -166,9 +144,7 @@
   cursor: pointer;
 }
 
-.mini-chat-body {
-  padding: 18px;
-}
+.mini-chat-body { padding: 18px; }
 
 .bot-msg {
   background: rgba(255,255,255,0.06);
@@ -186,7 +162,6 @@
   margin-top: 12px;
 }
 
-/* mobile */
 @media (max-width: 768px) {
   .floating-contact-widget {
     right: 22px;
@@ -223,81 +198,72 @@
   }
 }
 </style>
+</head>
+
 <body>
-
-  <header>
-    <nav class="navbar navbar-expand-lg fixed-top custom-navbar" id="mainNav">
-      <div class="container">
-
-        <a class="navbar-brand" href="index.html">
-          Medipol <span>Pan-African</span>
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="mainNavbar">
-          <ul class="navbar-nav ms-auto align-items-lg-center">
-
-            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
-            <li class="nav-item"><a class="nav-link active" href="events.html">Événements</a></li>
-            <li class="nav-item"><a class="nav-link" href="gallery.html">Galerie</a></li>
-            <li class="nav-item"><a class="nav-link" href="team.html">Équipe</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#join">Nous rejoindre</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-
-            <li class="nav-item dropdown ms-lg-3">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">FR</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="event-details.html">English</a></li>
-                <li><a class="dropdown-item" href="../fr/event-details.html">Français</a></li>
-                <li><a class="dropdown-item" href="../tr/event-details.html">Türkçe</a></li>
-              </ul>
-            </li>
-
-          </ul>
-        </div>
-
-      </div>
-    </nav>
-
-    <div class="african-pattern-bar"></div>
-  </header>
-
-  <section class="event-detail-section page-section">
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top custom-navbar" id="mainNav">
     <div class="container">
-
-      <a href="events.html" class="btn-learn mb-4 d-inline-block">
-        ← Retour aux événements
+      <a class="navbar-brand" href="index.html">
+        Medipol <span>Pan-African</span>
       </a>
 
-      <div id="eventDetails" class="event-detail-card fade-up visible">
-        <!-- Les détails de l’événement seront chargés ici avec JavaScript -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="events.html">Événements</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Galerie</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">Équipe</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#join">Nous rejoindre</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+          <li class="nav-item dropdown ms-lg-3">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">FR</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" data-language-link="en" href="../event-details.html">English</a></li>
+              <li><a class="dropdown-item" data-language-link="fr" href="event-details.html">Français</a></li>
+              <li><a class="dropdown-item" data-language-link="tr" href="../tr/event-details.html">Türkçe</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
-
     </div>
-  </section>
+  </nav>
 
+  <div class="african-pattern-bar"></div>
+</header>
 
+<section class="event-detail-section page-section">
+  <div class="container">
+    <a href="events.html" class="btn-learn mb-4 d-inline-block">
+      ← Retour aux événements
+    </a>
 
+    <div id="eventDetails" class="event-detail-card fade-up visible">
+      <p>Chargement des détails de l’événement…</p>
+    </div>
+  </div>
+</section>
 
-    <div class="floating-contact-widget">
-
-  <a href="https://www.instagram.com/pan_africanistanbul/" target="_blank" class="float-option option-instagram">
+<div class="floating-contact-widget">
+  <a href="https://www.instagram.com/pan_africanistanbul/" target="_blank" rel="noopener noreferrer" class="float-option option-instagram">
     <i class="fa-brands fa-instagram"></i>
     <span>Instagram</span>
   </a>
 
-  <a href="Farai.luwisi@std.medipol.edu.tr" class="float-option option-email">
+  <a href="mailto:Farai.luwisi@std.medipol.edu.tr" class="float-option option-email">
     <i class="fa-solid fa-envelope"></i>
     <span>Email</span>
   </a>
 
-  <a href="tel:https://wa.link/0rqaf9" class="float-option option-phone">
-    <i class="fa-solid fa-phone"></i>
-    <span>Call Us</span>
+  <a href="https://wa.link/0rqaf9" target="_blank" rel="noopener noreferrer" class="float-option option-phone">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>WhatsApp</span>
   </a>
 
   <button class="float-option option-chat" id="openMiniChat">
@@ -308,201 +274,69 @@
   <button class="float-main-btn" id="floatMainBtn">
     <i class="fa-solid fa-headset"></i>
   </button>
+</div>
 
-  </div>
-  <div class="mini-chat-panel" id="miniChatPanel">
-    <div class="mini-chat-header">
-      <div>
-        <strong>Live Support</strong>
-        <p>Medipol Pan-African Club</p>
-      </div>
-      <button id="closeMiniChat">×</button>
+<div class="mini-chat-panel" id="miniChatPanel">
+  <div class="mini-chat-header">
+    <div>
+      <strong>Live Support</strong>
+      <p>Medipol Pan-African Club</p>
     </div>
-
-    <div class="mini-chat-body">
-      <p class="bot-msg">Hello 👋 How can we help you?</p>
-
-      <a href="https://www.instagram.com/pan_africanistanbul/" target="_blank">
-        Chat on Instagram
-      </a>
-
-      <a href="mailto:Farai.luwisi@std.medipol.edu.tr">
-        Send Email
-      </a>
-    </div>
+    <button id="closeMiniChat">×</button>
   </div>
 
+  <div class="mini-chat-body">
+    <p class="bot-msg">Hello 👋 How can we help you?</p>
+    <a href="https://www.instagram.com/pan_africanistanbul/" target="_blank" rel="noopener noreferrer">Chat on Instagram</a>
+    <a href="mailto:Farai.luwisi@std.medipol.edu.tr">Send Email</a>
+  </div>
+</div>
 
-  <footer id="contact">
-    <div class="container">
-
-      <div class="row gy-5">
-
-        <div class="col-lg-4">
-          <div class="footer-brand">
-            Medipol <span>Pan-African</span>
-          </div>
-
-          <p class="footer-text">
-            Célébrer l’unité, la culture et l’excellence africaines à l’Université Istanbul Medipol.
-          </p>
-
-          <div class="social-links">
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-            <a href="#">WhatsApp</a>
-          </div>
+<footer id="contact">
+  <div class="container">
+    <div class="row gy-5">
+      <div class="col-lg-4">
+        <div class="footer-brand">
+          Medipol <span>Pan-African</span>
         </div>
-
-        <div class="col-lg-4">
-          <h4 class="footer-heading">Liens rapides</h4>
-
-          <ul class="footer-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="about.html">À propos</a></li>
-            <li><a href="events.html">Événements</a></li>
-            <li><a href="gallery.html">Galerie</a></li>
-            <li><a href="team.html">Équipe</a></li>
-          </ul>
+        <p class="footer-text">
+          Célébrer l’unité, la culture et l’excellence africaines à l’Université Istanbul Medipol.
+        </p>
+        <div class="social-links">
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">WhatsApp</a>
         </div>
-
-        <div class="col-lg-4">
-          <h4 class="footer-heading">Contact</h4>
-
-          <ul class="footer-links">
-            <li>panafricanclub@medipol.edu.tr</li>
-            <li>Université Istanbul Medipol</li>
-            <li>Istanbul, Türkiye</li>
-          </ul>
-        </div>
-
       </div>
 
-      <div class="footer-bottom">
-        <p>© 2026 Club Panafricain d’Istanbul Medipol. Tous droits réservés.</p>
-        <div class="footer-motto">Une Afrique. Un avenir. 🌍</div>
+      <div class="col-lg-4">
+        <h4 class="footer-heading">Liens rapides</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="events.html">Événements</a></li>
+          <li><a href="gallery.html">Galerie</a></li>
+          <li><a href="team.html">Équipe</a></li>
+        </ul>
       </div>
 
+      <div class="col-lg-4">
+        <h4 class="footer-heading">Contact</h4>
+        <ul class="footer-links">
+          <li>panafricanclub@medipol.edu.tr</li>
+          <li>Université Istanbul Medipol</li>
+          <li>Istanbul, Türkiye</li>
+        </ul>
+      </div>
     </div>
-  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="footer-bottom">
+      <p>© 2026 Club Panafricain d’Istanbul Medipol. Tous droits réservés.</p>
+      <div class="footer-motto">Une Afrique. Un avenir. 🌍</div>
+    </div>
+  </div>
+</footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const eventId = params.get("id");
-
-      const selectedEvent = events.find(event => event.id === eventId);
-      const eventDetails = document.getElementById("eventDetails");
-
-      const renderList = (title, items) => {
-        if (!items || items.length === 0) return "";
-
-        return `
-          <div class="event-extra-section">
-            <h3>${title}</h3>
-
-            <ul class="event-highlights">
-              ${items.map(item => `<li>${item}</li>`).join("")}
-            </ul>
-          </div>
-        `;
-      };
-
-      const renderBadges = (title, items) => {
-        if (!items || items.length === 0) return "";
-
-        return `
-          <div class="event-extra-section">
-            <h3>${title}</h3>
-
-            <div class="countries-grid">
-              ${items.map(item => `
-                <span class="country-badge">${item}</span>
-              `).join("")}
-            </div>
-          </div>
-        `;
-      };
-
-      if (selectedEvent) {
-        eventDetails.innerHTML = `
-          <div class="event-detail-image">
-            ${selectedEvent.image}
-          </div>
-
-          <div class="event-detail-content">
-
-            <div class="event-date">
-              ${selectedEvent.date}
-            </div>
-
-            <h1 class="section-title">
-              ${selectedEvent.title}
-            </h1>
-
-            <div class="event-meta">
-              <div>
-                <strong>Catégorie :</strong>
-                <span>${selectedEvent.category}</span>
-              </div>
-
-              <div>
-                <strong>Lieu :</strong>
-                <span>${selectedEvent.location}</span>
-              </div>
-            </div>
-
-            <p class="event-full-description">
-              ${selectedEvent.fullDescription}
-            </p>
-
-            ${renderBadges("Pays et communautés représentés", selectedEvent.representedCountries)}
-
-            ${renderList("Leaders et héros africains présentés", selectedEvent.leaders)}
-
-            ${renderList("Décorations culturelles", selectedEvent.decorations)}
-
-            ${renderList("Quiz interactif sur l’Afrique", selectedEvent.quizDetails)}
-
-            ${renderList("Prix culturels", selectedEvent.prizes)}
-
-            ${renderBadges("Pays du showcase culinaire", selectedEvent.foodShowcase)}
-
-            ${renderList("Points forts de l’événement", selectedEvent.highlights)}
-
-            <div class="event-actions">
-              <a href="contact.html" class="btn-gold">
-                Contacter les organisateurs
-              </a>
-
-              <a href="events.html" class="btn-outline-gold">
-                Découvrir plus d’événements
-              </a>
-            </div>
-
-          </div>
-        `;
-      } else {
-        eventDetails.innerHTML = `
-          <div class="event-detail-content">
-            <h1 class="section-title">
-              Événement <span>introuvable</span>
-            </h1>
-
-            <p class="event-full-description">
-              Cet événement n’existe pas ou a peut-être été supprimé.
-            </p>
-
-            <a href="events.html" class="btn-gold">
-              Retour aux événements
-            </a>
-          </div>
-        `;
-      }
-    });
-  </script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

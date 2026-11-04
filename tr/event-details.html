@@ -1,581 +1,190 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Etkinlik Detayları | Medipol Pan-African</title>
- <link rel="icon" href="../images/logo.jpeg">  
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="../images/logo.jpeg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-  <link rel="stylesheet" href="../css/styles.css"> 
-  <script src="../js/main.js"></script>
-  <script src="../js/events-data.js"></script>
-</head>
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script src="../js/main.js" defer></script>
 
 <style>
-  .floating-contact-widget {
-  position: fixed;
-  right: 34px;
-  bottom: 34px;
-  width: 72px;
-  height: 72px;
-  z-index: 9999;
-}
+.floating-contact-widget{position:fixed;right:34px;bottom:34px;width:72px;height:72px;z-index:9999}
+.float-main-btn,.float-option{width:68px;height:68px;border-radius:50%;border:none;position:absolute;right:0;bottom:0;display:flex;align-items:center;justify-content:center;color:white;font-size:1.65rem;text-decoration:none;box-shadow:0 14px 35px rgba(0,0,0,.35);transition:.35s ease}
+.float-main-btn{background:#c0d219;cursor:pointer;z-index:5}
+.float-main-btn:hover{transform:scale(1.08)}
+.float-option{opacity:0;pointer-events:none;transform:translate(0,0) scale(.3)}
+.floating-contact-widget.active .float-option{opacity:1;pointer-events:auto}
+.floating-contact-widget.active .option-instagram{transform:translate(-105px,-15px) scale(1)}
+.floating-contact-widget.active .option-email{transform:translate(-80px,-95px) scale(1)}
+.floating-contact-widget.active .option-phone{transform:translate(0,-130px) scale(1)}
+.floating-contact-widget.active .option-chat{transform:translate(-125px,-125px) scale(1)}
+.option-instagram{background:#e1306c}
+.option-email{background:#d4af37;color:#111}
+.option-phone{background:#25d366}
+.option-chat{background:#1e88e5;cursor:pointer}
+.float-option span{position:absolute;right:78px;background:#111;color:#fff;font-size:.75rem;white-space:nowrap;padding:6px 10px;border-radius:20px;opacity:0;transform:translateX(8px);transition:.25s ease;pointer-events:none}
+.float-option:hover span{opacity:1;transform:translateX(0)}
+.mini-chat-panel{position:fixed;right:34px;bottom:125px;width:320px;background:#111;border:1px solid rgba(212,175,55,.25);border-radius:14px;overflow:hidden;display:none;z-index:9998;box-shadow:0 22px 60px rgba(0,0,0,.45)}
+.mini-chat-panel.show{display:block}
+.mini-chat-header{background:var(--green);color:white;padding:16px 18px;display:flex;justify-content:space-between;align-items:center}
+.mini-chat-header p{margin:2px 0 0;font-size:.8rem;opacity:.75}
+.mini-chat-header button{background:transparent;border:none;color:white;font-size:1.7rem;cursor:pointer}
+.mini-chat-body{padding:18px}
+.bot-msg{background:rgba(255,255,255,.06);color:rgba(255,255,255,.78);padding:12px 14px;border-radius:10px;margin-bottom:16px}
+.mini-chat-body a{display:block;color:var(--gold);text-decoration:none;font-weight:700;margin-top:12px}
+.event-extra-section{margin-top:32px;padding:24px;background:rgba(255,255,255,.035);border:1px solid rgba(201,166,70,.18);border-radius:12px}
+.event-extra-section h3{color:var(--gold);margin-bottom:16px;font-size:1.35rem}
+.payment-iban{margin-top:18px;padding:16px;background:rgba(201,166,70,.08);border-radius:8px;overflow-wrap:anywhere}
 
-.float-main-btn,
-.float-option {
-  width: 68px;
-  height: 68px;
-  border-radius: 50%;
-  border: none;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: white;
-  font-size: 1.65rem;
-  text-decoration: none;
-
-  box-shadow: 0 14px 35px rgba(0,0,0,0.35);
-  transition: 0.35s ease;
-}
-
-.float-main-btn {
-  background: #c0d219;
-  cursor: pointer;
-  z-index: 5;
-}
-
-.float-main-btn:hover {
-  transform: scale(1.08);
-}
-
-.float-option {
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(0, 0) scale(0.3);
-}
-
-.floating-contact-widget.active .float-option {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* pop-out circle positions */
-.floating-contact-widget.active .option-instagram {
-  transform: translate(-105px, -15px) scale(1);
-}
-
-.floating-contact-widget.active .option-email {
-  transform: translate(-80px, -95px) scale(1);
-}
-
-.floating-contact-widget.active .option-phone {
-  transform: translate(0, -130px) scale(1);
-}
-
-.floating-contact-widget.active .option-chat {
-  transform: translate(-125px, -125px) scale(1);
-}
-
-/* colors */
-.option-instagram {
-  background: #e1306c;
-}
-
-.option-email {
-  background: #d4af37;
-  color: #111;
-}
-
-.option-phone {
-  background: #25d366;
-}
-
-.option-chat {
-  background: #1e88e5;
-  cursor: pointer;
-}
-
-/* labels */
-.float-option span {
-  position: absolute;
-  right: 78px;
-  background: #111;
-  color: #fff;
-  font-size: 0.75rem;
-  white-space: nowrap;
-  padding: 6px 10px;
-  border-radius: 20px;
-  opacity: 0;
-  transform: translateX(8px);
-  transition: 0.25s ease;
-  pointer-events: none;
-}
-
-.float-option:hover span {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* mini chat */
-.mini-chat-panel {
-  position: fixed;
-  right: 34px;
-  bottom: 125px;
-  width: 320px;
-  background: #111;
-  border: 1px solid rgba(212,175,55,0.25);
-  border-radius: 14px;
-  overflow: hidden;
-  display: none;
-  z-index: 9998;
-  box-shadow: 0 22px 60px rgba(0,0,0,0.45);
-}
-
-.mini-chat-panel.show {
-  display: block;
-}
-
-.mini-chat-header {
-  background: var(--green);
-  color: white;
-  padding: 16px 18px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mini-chat-header p {
-  margin: 2px 0 0;
-  font-size: 0.8rem;
-  opacity: 0.75;
-}
-
-.mini-chat-header button {
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 1.7rem;
-  cursor: pointer;
-}
-
-.mini-chat-body {
-  padding: 18px;
-}
-
-.bot-msg {
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.78);
-  padding: 12px 14px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-}
-
-.mini-chat-body a {
-  display: block;
-  color: var(--gold);
-  text-decoration: none;
-  font-weight: 700;
-  margin-top: 12px;
-}
-
-/* mobile */
-@media (max-width: 768px) {
-  .floating-contact-widget {
-    right: 22px;
-    bottom: 24px;
-  }
-
-  .float-main-btn,
-  .float-option {
-    width: 60px;
-    height: 60px;
-    font-size: 1.35rem;
-  }
-
-  .floating-contact-widget.active .option-instagram {
-    transform: translate(-88px, -10px) scale(1);
-  }
-
-  .floating-contact-widget.active .option-email {
-    transform: translate(-70px, -80px) scale(1);
-  }
-
-  .floating-contact-widget.active .option-phone {
-    transform: translate(0, -110px) scale(1);
-  }
-
-  .floating-contact-widget.active .option-chat {
-    transform: translate(-105px, -105px) scale(1);
-  }
-
-  .mini-chat-panel {
-    right: 18px;
-    bottom: 105px;
-    width: calc(100% - 36px);
-  }
+@media(max-width:768px){
+  .floating-contact-widget{right:22px;bottom:24px}
+  .float-main-btn,.float-option{width:60px;height:60px;font-size:1.35rem}
+  .floating-contact-widget.active .option-instagram{transform:translate(-88px,-10px) scale(1)}
+  .floating-contact-widget.active .option-email{transform:translate(-70px,-80px) scale(1)}
+  .floating-contact-widget.active .option-phone{transform:translate(0,-110px) scale(1)}
+  .floating-contact-widget.active .option-chat{transform:translate(-105px,-105px) scale(1)}
+  .mini-chat-panel{right:18px;bottom:105px;width:calc(100% - 36px)}
 }
 </style>
+</head>
 
 <body>
-  <!-- HEADER -->
-  <header>
 
-    <nav class="navbar navbar-expand-lg fixed-top custom-navbar" id="mainNav">
-
-      <div class="container">
-
-        <a class="navbar-brand" href="index.html">
-          Medipol <span>Pan-African</span>
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="mainNavbar">
-
-          <ul class="navbar-nav ms-auto align-items-lg-center">
-
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Ana Sayfa</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">Hakkımızda</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link active" href="events.html">Etkinlikler</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="gallery.html">Galeri</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="team.html">Ekip</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#join">Bize Katıl</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">İletişim</a>
-            </li>
-          </ul>
-
-        </div>
-
-      </div>
-
-    </nav>
-
-    <div class="african-pattern-bar"></div>
-
-  </header>
-
-  <!-- EVENT DETAILS SECTION -->
-  <section class="event-detail-section page-section">
-
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top custom-navbar" id="mainNav">
     <div class="container">
+      <a class="navbar-brand" href="index.html">Medipol <span>Pan-African</span></a>
 
-      <a href="events.html" class="btn-learn mb-4 d-inline-block">
-        ← Etkinliklere Geri Dön
-      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <div id="eventDetails" class="event-detail-card fade-up visible">
-        <!-- Etkinlik detayları JavaScript ile burada yüklenecek -->
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">Hakkımızda</a></li>
+          <li class="nav-item"><a class="nav-link active" href="events.html">Etkinlikler</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Galeri</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">Ekibimiz</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#join">Bize Katıl</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">İletişim</a></li>
+
+          <li class="nav-item dropdown ms-lg-3">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">TR</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" data-language-link="en" href="../event-details.html">English</a></li>
+              <li><a class="dropdown-item" data-language-link="fr" href="../fr/event-details.html">Français</a></li>
+              <li><a class="dropdown-item" data-language-link="tr" href="event-details.html">Türkçe</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
-
     </div>
+  </nav>
 
-  </section>
+  <div class="african-pattern-bar"></div>
+</header>
 
+<section class="event-detail-section page-section">
+  <div class="container">
+    <a href="events.html" class="btn-learn mb-4 d-inline-block">
+      ← Etkinliklere Geri Dön
+    </a>
 
-  <div class="floating-contact-widget">
+    <div id="eventDetails" class="event-detail-card fade-up visible">
+      <p>Etkinlik detayları yükleniyor…</p>
+    </div>
+  </div>
+</section>
 
-  <a href="https://www.instagram.com/pan_africanistanbul/" target="_blank" class="float-option option-instagram">
-    <i class="fa-brands fa-instagram"></i>
-    <span>Instagram</span>
+<div class="floating-contact-widget">
+  <a href="https://www.instagram.com/pan_africanistanbul/" target="_blank" rel="noopener noreferrer" class="float-option option-instagram">
+    <i class="fa-brands fa-instagram"></i><span>Instagram</span>
   </a>
 
-  <a href="Farai.luwisi@std.medipol.edu.tr" class="float-option option-email">
-    <i class="fa-solid fa-envelope"></i>
-    <span>Email</span>
+  <a href="mailto:Farai.luwisi@std.medipol.edu.tr" class="float-option option-email">
+    <i class="fa-solid fa-envelope"></i><span>E-posta</span>
   </a>
 
-  <a href="tel:https://wa.link/0rqaf9" class="float-option option-phone">
-    <i class="fa-solid fa-phone"></i>
-    <span>Call Us</span>
+  <a href="https://wa.link/0rqaf9" target="_blank" rel="noopener noreferrer" class="float-option option-phone">
+    <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
   </a>
 
-  <button class="float-option option-chat" id="openMiniChat">
-    <i class="fa-solid fa-comments"></i>
-    <span>Live Chat</span>
+  <button type="button" class="float-option option-chat" id="openMiniChat">
+    <i class="fa-solid fa-comments"></i><span>Canlı Destek</span>
   </button>
 
-  <button class="float-main-btn" id="floatMainBtn">
+  <button type="button" class="float-main-btn" id="floatMainBtn">
     <i class="fa-solid fa-headset"></i>
   </button>
+</div>
 
-  </div>
-  <div class="mini-chat-panel" id="miniChatPanel">
-    <div class="mini-chat-header">
-      <div>
-        <strong>Live Support</strong>
-        <p>Medipol Pan-African Club</p>
-      </div>
-      <button id="closeMiniChat">×</button>
+<div class="mini-chat-panel" id="miniChatPanel">
+  <div class="mini-chat-header">
+    <div>
+      <strong>Canlı Destek</strong>
+      <p>Medipol Pan-African Kulübü</p>
     </div>
-
-    <div class="mini-chat-body">
-      <p class="bot-msg">Hello 👋 How can we help you?</p>
-
-      <a href="https://www.instagram.com/pan_africanistanbul/" target="_blank">
-        Chat on Instagram
-      </a>
-
-      <a href="mailto:Farai.luwisi@std.medipol.edu.tr">
-        Send Email
-      </a>
-    </div>
+    <button type="button" id="closeMiniChat">×</button>
   </div>
 
+  <div class="mini-chat-body">
+    <p class="bot-msg">Merhaba 👋 Size nasıl yardımcı olabiliriz?</p>
+    <a href="https://www.instagram.com/pan_africanistanbul/" target="_blank" rel="noopener noreferrer">Instagram üzerinden bize ulaşın</a>
+    <a href="mailto:Farai.luwisi@std.medipol.edu.tr">E-posta gönderin</a>
+  </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer id="contact">
-
-    <div class="container">
-
-      <div class="row gy-5">
-
-        <div class="col-lg-4">
-
-          <div class="footer-brand">
-            Medipol <span>Pan-African</span>
-          </div>
-
-          <p class="footer-text">
-            İstanbul Medipol Üniversitesi’nde Afrika birliğini, kültürünü ve mükemmelliğini kutluyoruz.
-          </p>
-
-          <div class="social-links">
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-            <a href="#">WhatsApp</a>
-          </div>
-
-        </div>
-
-        <div class="col-lg-4">
-
-          <h4 class="footer-heading">
-            Hızlı Bağlantılar
-          </h4>
-
-          <ul class="footer-links">
-
-            <li><a href="index.html">Ana Sayfa</a></li>
-
-            <li><a href="about.html">Hakkımızda</a></li>
-
-            <li><a href="events.html">Etkinlikler</a></li>
-
-            <li><a href="gallery.html">Galeri</a></li>
-
-            <li><a href="team.html">Ekip</a></li>
-
-          </ul>
-
-        </div>
-
-        <div class="col-lg-4">
-
-          <h4 class="footer-heading">
-            İletişim
-          </h4>
-
-          <ul class="footer-links">
-
-            <li>panafricanclub@medipol.edu.tr</li>
-
-            <li>İstanbul Medipol Üniversitesi</li>
-
-            <li>İstanbul, Türkiye</li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-
-        <p>
-          © 2026 İstanbul Medipol Pan-African Club. Tüm hakları saklıdır.
+<footer id="contact">
+  <div class="container">
+    <div class="row gy-5">
+      <div class="col-lg-4">
+        <div class="footer-brand">Medipol <span>Pan-African</span></div>
+        <p class="footer-text">
+          İstanbul Medipol Üniversitesi'nde Afrika birliğini, kültürünü ve mükemmelliğini kutluyoruz.
         </p>
-
-        <div class="footer-motto">
-          Tek Afrika. Tek Gelecek. 🌍
+        <div class="social-links">
+          <a href="https://www.instagram.com/pan_africanistanbul/">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="https://wa.link/0rqaf9">WhatsApp</a>
         </div>
-
       </div>
 
+      <div class="col-lg-4">
+        <h4 class="footer-heading">Hızlı Bağlantılar</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="about.html">Hakkımızda</a></li>
+          <li><a href="events.html">Etkinlikler</a></li>
+          <li><a href="gallery.html">Galeri</a></li>
+          <li><a href="team.html">Ekibimiz</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4">
+        <h4 class="footer-heading">İletişim</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:Farai.luwisi@std.medipol.edu.tr">Farai.luwisi@std.medipol.edu.tr</a></li>
+          <li>İstanbul Medipol Üniversitesi</li>
+          <li>İstanbul, Türkiye</li>
+        </ul>
+      </div>
     </div>
 
-  </footer>
+    <div class="footer-bottom">
+      <p>© 2026 İstanbul Medipol Pan-African Kulübü. Tüm hakları saklıdır.</p>
+      <div class="footer-motto">Tek Afrika. Tek Gelecek. 🌍</div>
+    </div>
+  </div>
+</footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Event Details Logic -->
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-
-    const params = new URLSearchParams(window.location.search);
-
-    const eventId = params.get("id");
-
-    const selectedEvent = events.find(event => event.id === eventId);
-
-    const eventDetails = document.getElementById("eventDetails");
-
-    const renderList = (title, items) => {
-
-      if (!items || items.length === 0) return "";
-
-      return `
-        <div class="event-extra-section">
-
-          <h3>${title}</h3>
-
-          <ul class="event-highlights">
-            ${items.map(item => `<li>${item}</li>`).join("")}
-          </ul>
-
-        </div>
-      `;
-    };
-
-    const renderBadges = (title, items) => {
-
-      if (!items || items.length === 0) return "";
-
-      return `
-        <div class="event-extra-section">
-
-          <h3>${title}</h3>
-
-          <div class="countries-grid">
-            ${items.map(item => `
-              <span class="country-badge">${item}</span>
-            `).join("")}
-          </div>
-
-        </div>
-      `;
-    };
-
-    if (selectedEvent) {
-
-      eventDetails.innerHTML = `
-
-        <div class="event-detail-image">
-          ${selectedEvent.image}
-        </div>
-
-        <div class="event-detail-content">
-
-          <div class="event-date">
-            ${selectedEvent.date}
-          </div>
-
-          <h1 class="section-title">
-            ${selectedEvent.title}
-          </h1>
-
-          <div class="event-meta">
-
-            <div>
-              <strong>Kategori:</strong>
-
-              <span>${selectedEvent.category}</span>
-            </div>
-
-            <div>
-              <strong>Konum:</strong>
-
-              <span>${selectedEvent.location}</span>
-            </div>
-
-          </div>
-
-          <p class="event-full-description">
-            ${selectedEvent.fullDescription}
-          </p>
-
-          ${renderBadges("Temsil Edilen Ülkeler & Topluluklar", selectedEvent.representedCountries)}
-
-          ${renderList("Afrikalı Liderler & Kahramanlar Sergisi", selectedEvent.leaders)}
-
-          ${renderList("Kültürel Dekorasyonlar", selectedEvent.decorations)}
-
-          ${renderList("Etkileşimli Afrika Bilgi Yarışması", selectedEvent.quizDetails)}
-
-          ${renderList("Kültürel Ödüller", selectedEvent.prizes)}
-
-          ${renderBadges("Yemek Tanıtımı Yapılan Ülkeler", selectedEvent.foodShowcase)}
-
-          ${renderList("Etkinlik Öne Çıkanları", selectedEvent.highlights)}
-
-          <div class="event-actions">
-
-            <a href="contact.html" class="btn-gold">
-              Organizatörlerle İletişime Geç
-            </a>
-
-            <a href="events.html" class="btn-outline-gold">
-              Daha Fazla Etkinlik Keşfet
-            </a>
-
-          </div>
-
-        </div>
-      `;
-
-    } else {
-
-      eventDetails.innerHTML = `
-
-        <div class="event-detail-content">
-
-          <h1 class="section-title">
-            Etkinlik <span>Bulunamadı</span>
-          </h1>
-
-          <p class="event-full-description">
-            Bu etkinlik mevcut değil veya kaldırılmış olabilir.
-          </p>
-
-          <a href="events.html" class="btn-gold">
-            Etkinliklere Geri Dön
-          </a>
-
-        </div>
-      `;
-    }
-
-  });
-  </script>
-
-  <script src="js/main.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
